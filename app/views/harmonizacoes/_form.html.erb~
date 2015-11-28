@@ -1,0 +1,25 @@
+<%= form_for(@harmonizaco) do |f| %>
+  <% if @harmonizaco.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@harmonizaco.errors.count, "error") %> prohibited this harmonizaco from being saved:</h2>
+
+      <ul>
+      <% @harmonizaco.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :vinho_id %><br>
+    <%= f.number_field :vinho_id %>
+  </div>
+  <div class="field">
+    <%= f.label :prato_id %><br>
+    <%= f.number_field :prato_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,36 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @vinho.nome %>
+</p>
+
+<p>
+  <strong>Ano:</strong>
+  <%= @vinho.ano %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @vinho.tipo %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+  <%= image_tag(@vinho.foto_url, :width => 100) if @vinho.foto.present? %>
+ </p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @vinho.descricao %>
+</p>
+
+<p>
+  <strong>Avaliacao:</strong>
+  <%= @vinho.avaliacao %>
+</p>
+
+<%= link_to 'Edit', edit_vinho_path(@vinho) %> |
+<%= link_to 'Back', vinhos_path %>
+</div>

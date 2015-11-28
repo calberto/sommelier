@@ -1,0 +1,6 @@
+<h1>Editing Harmonizaco</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @harmonizaco %> |
+<%= link_to 'Back', harmonizacoes_path %>

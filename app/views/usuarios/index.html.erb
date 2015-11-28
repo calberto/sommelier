@@ -1,0 +1,40 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h1>Listando Usuários...</h1>
+
+<div class="panel-body">
+   <div class="col-md-6">
+        <div class="input-group h2">
+            <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+  
+   <div class="col-md-3">
+        <a href="add.html" class="btn btn-primary pull-right 		h2">Novo Item</a>
+   </div>
+   <table class="table table-striped">  </thead>
+
+  <tbody>
+    <% @usuarios.each do |usuario| %>
+      <tr>
+        <td><%= usuario.nome %></td>
+        <td><%= usuario.email %></td>
+        <td><%= link_to 'Visualizar', usuario, :class =>"btn btn-success btn-xs" %></td>
+		<td><%= link_to 'Editar', edit_usuario_path(usuario),:class =>"btn btn-warning btn-xs" %></td>
+		<td><%= link_to 'Excluir', usuario, method: :delete, data: { confirm: 'Are you sure?' },:class =>"btn btn-danger btn-xs" %></td>
+	      </tr>
+	   <% end %>  
+           
+	  </tbody>
+          
+    </table>
+    <%= paginate @usuarios %>
+    
+
+<%= link_to 'Novo Usuário', new_usuario_path %>

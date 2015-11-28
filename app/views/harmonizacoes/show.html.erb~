@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vinho:</strong>
+  <%= @harmonizaco.vinho_id %>
+</p>
+
+<p>
+  <strong>Prato:</strong>
+  <%= @harmonizaco.prato_id %>
+</p>
+
+<%= link_to 'Edit', edit_harmonizaco_path(@harmonizaco) %> |
+<%= link_to 'Back', harmonizacoes_path %>

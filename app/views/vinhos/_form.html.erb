@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+	
+</head>	
+<body>
+
+
+<%= form_for(@vinho, :html => { :multipart => true })  do |f| %>
+  <% if @vinho.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vinho.errors.count, "error") %> prohibited this vinho from being saved:</h2>
+
+      <ul>
+      <% @vinho.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome, :class=>"form-control",:placeholder=>"Nome"  %>
+  </div>
+  <div class="field">
+    <%= f.label :ano %><br>
+    <%= f.number_field :ano, :class=>"form-control",:placeholder=>"Ano"  %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo, :class=>"form-control",:placeholder=>"Tipo"  %>
+  </div>
+  <div class="field">
+    <%= f.label :foto %><br>
+    <%= f.file_field :foto, :class=>"form-control",:placeholder=>"Foto"  %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_area :descricao, :class=>"form-control",:placeholder=>"Descricao"  %>
+  </div>
+  <div class="field">
+    <%= f.label :avaliacao %><br>
+    <%= f.text_field :avaliacao, :class=>"form-control",:placeholder=>"Avaliacao"  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</body>
+</html>
+

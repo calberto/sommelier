@@ -1,0 +1,55 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h1>Listando Vinhos...</h1>
+
+<div class="panel-body">
+   <div class="col-md-6">
+        <div class="input-group h2">
+            <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+  
+   <div class="col-md-3">
+        <a href="add.html" class="btn btn-primary pull-right 		h2">Novo Item</a>
+   </div>
+   <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Ano</th>
+      <th>Tipo</th>
+      <th>Foto</th>
+      <th>Descricao</th>
+      <th>Avaliacao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vinhos.each do |vinho| %>
+      <tr>
+        <td><%= vinho.nome %></td>
+        <td><%= vinho.ano %></td>
+        <td><%= vinho.tipo %></td>
+        <td><%= vinho.foto %></td>
+        <td><%= vinho.descricao %></td>
+        <td><%= vinho.avaliacao %></td>
+        <td><%= link_to 'Visualizar', vinho, :class =>"btn btn-success btn-xs" %></td>
+		<td><%= link_to 'Editar', edit_vinho_path(vinho),:class =>"btn btn-warning btn-xs" %></td>
+		<td><%= link_to 'Excluir', vinho, method: :delete, data: { confirm: 'Are you sure?' },:class =>"btn btn-danger btn-xs" %></td>
+	      </tr>
+	   <% end %>  
+           
+	  </tbody>
+          
+    </table>
+    <%= paginate @vinhos %>
+    
+
+<%= link_to 'New Vinho', new_vinho_path %>
