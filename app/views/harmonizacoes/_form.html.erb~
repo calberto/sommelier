@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :vinho_id %><br>
-    <%= f.number_field :vinho_id %>
+    <%= f.number_field :vinho_id, :class=>"form-control",:placeholder=>"Número do vinho" %>
   </div>
   <div class="field">
     <%= f.label :prato_id %><br>
-    <%= f.number_field :prato_id %>
+    <%= f.number_field :prato_id, :class=>"form-control",:placeholder=>"Número do prato" %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,10 +1,10 @@
-<%= form_for(@harmonizaco) do |f| %>
-  <% if @harmonizaco.errors.any? %>
+<%= form_for(@harmonizacao) do |f| %>
+  <% if @harmonizacao.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@harmonizaco.errors.count, "error") %> prohibited this harmonizaco from being saved:</h2>
+      <h2><%= pluralize(@harmonizacao.errors.count, "error") %> prohibited this harmonizacao from being saved:</h2>
 
       <ul>
-      <% @harmonizaco.errors.full_messages.each do |message| %>
+      <% @harmonizacao.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

@@ -2,12 +2,12 @@
 
 <p>
   <strong>Vinho:</strong>
-  <%= @harmonizaco.vinho_id %>
+  <%= @harmonizaco.vinho_id, :class=>"form-control" %>
 </p>
 
 <p>
   <strong>Prato:</strong>
-  <%= @harmonizaco.prato_id %>
+  <%= @harmonizaco.prato_id, :class=>"form-control" %>
 </p>
 
 <%= link_to 'Edit', edit_harmonizaco_path(@harmonizaco) %> |

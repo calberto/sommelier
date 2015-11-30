@@ -1,7 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listando Harmonizações</h1>
-
+<div class="panel-body">
+   <div class="col-md-6">
+        <div class="input-group h2">
+            <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">
+                   <i class="fa fa-cog fa-spin"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+  
+   <div class="col-md-3">
+        <a href="add.html" class="btn btn-primary pull-right 		h2"><i class="fa fa-user-plus"></i>Novo Item</a>
+   </div>
 <table>
   <thead>
     <tr>
@@ -14,11 +28,11 @@
   <tbody>
     <% @harmonizacoes.each do |harmonizaco| %>
       <tr>
-        <td><%= harmonizaco.vinho_id %></td>
-        <td><%= harmonizaco.prato_id %></td>
-        <td><%= link_to 'Show', harmonizaco %></td>
-        <td><%= link_to 'Edit', edit_harmonizaco_path(harmonizaco) %></td>
-        <td><%= link_to 'Destroy', harmonizaco, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= harmonizacao.vinho_id %></td>
+        <td><%= harmonizacao.prato_id %></td>
+        <td><%= link_to 'Show', harmonizacao %></td>
+        <td><%= link_to 'Edit', edit_harmonizacao_path(harmonizacao) %></td>
+        <td><%= link_to 'Destroy', harmonizacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +42,4 @@
 <%= link_to 'Novo Usuário', new_usuario_path %>
 <br>
 
-<%= link_to 'New Harmonizacao', new_harmonizaco_path %>
+<%= link_to 'New Harmonizacao', new_harmonizacao_path %>

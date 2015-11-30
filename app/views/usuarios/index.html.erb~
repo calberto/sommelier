@@ -9,14 +9,14 @@
             <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
             <span class="input-group-btn">
                 <button class="btn btn-primary" type="submit">
-                    <span class="glyphicon glyphicon-search"></span>
+                   <i class="fa fa-bicycle fa-1x"></i>
                 </button>
             </span>
         </div>
     </div>
   
    <div class="col-md-3">
-        <a href="add.html" class="btn btn-primary pull-right 		h2">Novo Item</a>
+        <a href="add.html" class="btn btn-primary pull-right 		h2"><i class="fa fa-user-plus"></i>Novo Item</a>
    </div>
    <table class="table table-striped">  </thead>
 
@@ -34,16 +34,7 @@
 	  </tbody>
           
     </table>
-
-    <nav>
-  <ul class="pagination">
-    <li>
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li><a href="#">1</a></li>
-    <li><a h
-<br>
+    <%= paginate @usuarios %>
+    
 
 <%= link_to 'Novo Usuário', new_usuario_path %>
